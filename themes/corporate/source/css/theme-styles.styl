@@ -120,12 +120,13 @@ h4 {
 
 /* Index styles */
 
-.row-corporate {
-  height: 600px; 
-  background-size: cover !important; 
-  overflow: hidden;
-  height: 600px;
-}
+.row-corporate
+  height: 600px
+  background: url(/assets/bg-banner.png) no-repeat right top / 60% auto
+  overflow: hidden
+  @media (max-width: 1024px)
+    background-size: 100%
+    background-blend-mode: saturation
 
 
 .flush-with-header {
@@ -186,3 +187,45 @@ h4 {
   color: white !important;
   border: 1px solid #e94d1c !important;
 }
+
+/* Yuan Design Styles */
+.site-logo
+  padding: 20px 0
+  size: 146px 45px
+  box-sizing: content-box
+  img
+    size: 100%
+
+.header .header-navigation
+  > ul
+    > li
+      width: 72px
+      text-align: center
+      border-bottom: none
+      display: flex
+      align-items: center
+      @media (max-width: 1024px)
+        width: unset
+      &.active
+      &:hover
+        a
+          color: rgba(#0a0a0a, .85)
+          border-bottom: none
+          @media (max-width: 1024px)
+            color: rgba(#0a0a0a, .85) !important
+      a
+        display: flex
+        size: 100%
+        align-items: center
+        justify-content: center
+        color: rgba(#0a0a0a, .65)
+
+.footer
+.pre-footer
+  background: #0c1623;
+
+.social-footer
+  > li
+    a
+      font-size: 1.5em
+      color: #c1c2c2

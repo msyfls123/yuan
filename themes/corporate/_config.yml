@@ -1,10 +1,10 @@
 # Header Menu
 menu:
-  Home: /
-  Projects: /projects/
-  Blog: /archives/ # can set archive-dir in root config to custom value
-  Contact: /contact/
-  About: /about/
+  首页: /
+  # 设计: /projects/
+  设计: /archives/ # can set archive-dir in root config to custom value
+  关于: /about/
+  联系: /contact/
    
 rss: /atom.xml
 
@@ -19,26 +19,26 @@ swiftype_install_key:
 
 # Social
 social:
-  github: https://github.com/ptsteadman
-  twitter: https://twitter.com/ptsteadman
-  facebook: https://www.facebook.com/ptsteadman
-  rss: atom.xml
+  # github: https://github.com/ptsteadman
+  # twitter: https://twitter.com/ptsteadman
+  # facebook: https://www.facebook.com/ptsteadman
+  # rss: atom.xml
   linkedin: https://linkedin.com/in/ptsteadman
-  stackoverflow: http://stackoverflow.com/users/2480493/patrick-steadman
+  wechat: http://stackoverflow.com/users/2480493/patrick-steadman
 
 # Miscellaneous
-color_scheme: red   # options: blue, gray, green, orange, red, turquoise
+color_scheme: turquoise   # options: blue, gray, green, orange, red, turquoise
 favicon: /favicon.ico # path from root of hexo site
-twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
-twitter_username: computerlab_ # twitter username without the @
+# twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
+# twitter_username: computerlab_ # twitter username without the @
 default_author: Anonymous
 
-about: Computer Lab is a software development and marketing company based in Brooklyn, New York. <br><br> Computer Lab was founded in 2015, and is focused on so on and so forth.
-phone: 716-472-4484
-email: ptsteadman@gmail.com
-address_1: 140 Metropolitan Avenue
-address_2: 5th Floor
-address_3: Brooklyn, NY 11249
+about: 做有意义的事情对社会有价值的人对国家有贡献人民有希望持续学习先进生成力
+phone: 177 1745 2346
+email: weston-yuan@outlook.com
+address_1: 上海市浦东新区唐镇
+# address_2: 5th Floor
+# address_3: Brooklyn, NY 11249
 skype: ptsteadman
 lat: 40.715911 
 long: -73.962147

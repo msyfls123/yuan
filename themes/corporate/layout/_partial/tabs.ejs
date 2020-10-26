@@ -1,0 +1,10 @@
+<%
+  var categories = site.categories.filter(c => config.main_categories.includes(c.name));
+%>
+<ul>
+  <% categories.forEach(function(cat){ %>
+    <li>
+      <a href="<%= url_for(cat.path) %>"><%= cat.name %> (<%= cat.length  %>)</a>
+    </li>
+  <% }) %>
+</ul>

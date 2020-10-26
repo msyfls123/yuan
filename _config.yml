@@ -108,3 +108,7 @@ deploy:
 
 exclude_generators:
   - index
+
+main_categories:
+  - 企业项目
+  - 设计研究

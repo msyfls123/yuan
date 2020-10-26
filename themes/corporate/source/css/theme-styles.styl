@@ -4,6 +4,8 @@
 @import "_util/grid"
 @import "_partial/highlight"
 
+mobile_query = '(max-width: 1023px)'
+
 .content-page {
   margin-right: 0px !important;
 }
@@ -122,7 +124,7 @@ h4 {
 
 .row-corporate
   height: 600px
-  background: url(../assets/bg-banner.png) no-repeat right top / 60% auto
+  background: url(../assets/img/bg-banner.png) no-repeat right top / 60% auto
   overflow: hidden
   @media (max-width: 1024px)
     background-size: 100%
@@ -195,6 +197,14 @@ h4 {
   box-sizing: content-box
   img
     size: 100%
+  @media mobile_query
+    size: 100px 30px
+    padding: 10px 0 15px
+
+.header .mobi-toggler
+.reduce-header .mobi-toggler
+  @media mobile_query
+    margin-top: 12px
 
 .header .header-navigation
   > ul

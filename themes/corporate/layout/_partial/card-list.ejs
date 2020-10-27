@@ -1,0 +1,14 @@
+<ul class="card-list">
+  <% posts.forEach(function(post, i){ %>
+  <li>
+    <a class="card" href="<%- url_for(post.path) %>">
+      <% var backgroundImage = url_for(post.thumbnail || '/img/cat.jpg') %>
+      <div class="thumbnail" style="background-image: url('<%= backgroundImage %>')"></div>
+      <header>
+        <p><%- post.subtitle || '' %></p>
+        <h3><%- post.title %></h3>
+      </header>
+    </a>
+  </li>
+  <% }) %>
+</ul>

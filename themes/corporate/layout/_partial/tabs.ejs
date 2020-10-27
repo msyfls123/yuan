@@ -3,12 +3,14 @@
 %>
 <div class="category-tabs">
   <div class="container">
-    <ul>
-      <% categories.forEach(function(cat){ %>
-      <li class="<%- cat.name === current ? 'active' : '' %> ">
-        <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
-      </li>
-      <% }) %>
-    </ul>
+    <div class="col-md-12">
+      <ul>
+        <% categories.forEach(function(cat){ %>
+        <li class="<%- cat.name === current ? 'active' : '' %> ">
+          <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
   </div>
 </div>

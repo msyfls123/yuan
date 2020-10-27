@@ -1,6 +1,18 @@
+<%
+  var selectedCategory = site.categories.data.find(cat => cat.name === '企业项目')
+%>
 <%- partial('_partial/tabs', { current: '企业项目' }) %>
 <div class="container">
   <div id="main">
     <%# partial('_partial/archive', {pagination: config.archive, index: false}) %>
+    <div class="col-md-8 main-archive">
+      <h1>
+        企业项目
+      </h1>
+      <%- partial('_partial/card-list', { posts: selectedCategory ? selectedCategory.posts : [] }) %>
+    </div>
+    <div class="col-md-4">
+
+    </div>
   </div>
 </div>

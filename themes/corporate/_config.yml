@@ -31,7 +31,7 @@ color_scheme: turquoise   # options: blue, gray, green, orange, red, turquoise
 favicon: /favicon.ico # path from root of hexo site
 # twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
 # twitter_username: computerlab_ # twitter username without the @
-default_author: Anonymous
+default_author: Yuan
 
 about: 做有意义的事情对社会有价值的人对国家有贡献人民有希望持续学习先进生成力
 phone: 177 1745 2346

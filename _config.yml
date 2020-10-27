@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Yuan Design
 subtitle: ''
 description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+keywords: 设计 创新
+author: Yuan
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
@@ -65,7 +65,15 @@ prismjs:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -date
+  order_by:
+    weight: -1
+    date: -1
+
+category_generator:
+  per_page: 10
+  order_by:
+    weight: -1
+    date: -1
 
 # Category & Tag
 default_category: uncategorized

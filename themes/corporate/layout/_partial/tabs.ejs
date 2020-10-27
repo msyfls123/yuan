@@ -1,10 +1,14 @@
 <%
   var categories = site.categories.filter(c => config.main_categories.includes(c.name));
 %>
-<ul>
-  <% categories.forEach(function(cat){ %>
-    <li>
-      <a href="<%= url_for(cat.path) %>"><%= cat.name %> (<%= cat.length  %>)</a>
-    </li>
-  <% }) %>
-</ul>
+<div class="category-tabs">
+  <div class="container">
+    <ul>
+      <% categories.forEach(function(cat){ %>
+      <li class="<%- cat.name === current ? 'active' : '' %> ">
+        <a href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

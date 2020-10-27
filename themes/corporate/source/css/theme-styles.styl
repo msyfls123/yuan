@@ -201,6 +201,9 @@ h4 {
     size: 100px 30px
     padding: 10px 0 15px
 
+.header
+  margin-bottom: 0
+
 .header .mobi-toggler
 .reduce-header .mobi-toggler
   @media mobile_query
@@ -239,3 +242,32 @@ h4 {
     a
       font-size: 1.5em
       color: #c1c2c2
+
+.category-tabs
+  background: #f3f3f3
+  padding: 40px 0
+  font-size: 18px
+  line-height: 25px
+  ul
+    display: flex
+    padding: 0
+    margin: 0
+  li
+    list-style: none
+    margin-right: 40px
+    position: relative
+    &.active
+      font-weight: bold
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        bottom: -10px
+        margin-left: 50%
+        size: 24px 5px
+        transform: translateX(-50%)
+        background: #00A968
+  a
+    &, &:hover
+      color: #0a0a0a
+      text-decoration: none

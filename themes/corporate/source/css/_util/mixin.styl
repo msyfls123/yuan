@@ -33,3 +33,43 @@ avoid-column-break()
 size(width, height = width)
   width: width
   height: height
+
+ellipsis()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+clamp(line)
+  display: -webkit-box
+  -webkit-line-clamp: line
+  -webkit-box-orient: vertical
+  overflow: hidden
+
+pixel-border(color, pseudo, direction)
+  position: relative
+  &::{pseudo}
+    content: ''
+    position: absolute
+    transform: scale(.5)
+    if direction == top
+      size: 200% 0
+      top: 0
+      left: 0
+      border-top 1px solid color
+      transform-origin: left top
+      transform: scale(.5)
+    else if direction == bottom
+      size: 200% 0
+      bottom: 0
+      left: 0
+      border-bottom 1px solid color
+      transform-origin: left bottom
+      transform: scale(.5)
+    else if direction == left
+      size: 0 200%
+      top: 0
+      left: 0
+      border-left 1px solid color
+      transform-origin: left top
+      transform: scale(.5)
+      border: 1px solid color

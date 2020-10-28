@@ -1,0 +1,24 @@
+<ul class="showcase-list">
+  <% posts.forEach(function(post, i){ %>
+  <li>
+    <a class="slide" href="<%- url_for(post.path) %>">
+      <% var backgroundImage = url_for(post.thumbnail || '/img/cat.jpg') %>
+      <div class="cover" style="background-image: url('<%= backgroundImage %>')"></div>
+      <div class="info">
+        <% if (post.tags.length || post.subtitle) { %>
+          <p>
+            <% post.tags.forEach((tag, index) => { %>
+              <span><%- tag.name %></span>
+            <% }) %>
+            <em><%= post.subtitle %></em>
+          </p>
+        <% } %>
+        <h3><%- post.title %></h3>
+        <div class="abstract"><%- post.lede || post.excerpt %></div>
+        <time>最后编辑于：<%- post.updated.format('YYYY.MM.DD') %></time>
+      </div>
+      <i class="fa fa-long-arrow-right"></i>
+    </a>
+  </li>
+  <% }) %>
+</ul>

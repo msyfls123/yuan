@@ -1,12 +1,9 @@
 <%- partial('_partial/tabs', { current: page.category }) %>
 <div class="container">
-  <!-- <ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="<%= url_for(theme.menu ? theme.menu['设计'] : '/archives/') %>">设计</a></li>>
-    <li class="active"><%- page.category %></li>
-  </ul> -->
   <section id="main">
-    <h1><%- page.category %></h1>
-    <%- partial('_partial/archive', {pagination: config.category, index: true}) %>
+    <div class="col-md-12 main-archive">
+      <h1><%- page.category %></h1>
+      <%- partial('_partial/showcase-list', { posts: page.posts }) %>
+    </div>
   </section>
 </div>

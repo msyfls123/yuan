@@ -1,18 +1,24 @@
 <%
-  var selectedCategory = site.categories.data.find(cat => cat.name === '企业项目')
+  var primary = config.main_categories[0]
+  var secondary= config.main_categories[1]
+  var primaryCategory = site.categories.data.find(cat => cat.name === primary)
+  var secondaryCategory = site.categories.data.find(cat => cat.name === secondary)
 %>
-<%- partial('_partial/tabs', { current: '企业项目' }) %>
+<%- partial('_partial/tabs', { current: '' }) %>
 <div class="container">
-  <div id="main">
+  <div id="main" class="archive-main">
     <%# partial('_partial/archive', {pagination: config.archive, index: false}) %>
     <div class="col-md-8 main-archive">
       <h1>
-        企业项目
+        <%- primary %>
       </h1>
-      <%- partial('_partial/card-list', { posts: selectedCategory ? selectedCategory.posts : [] }) %>
+      <%- partial('_partial/card-list', { posts: primaryCategory ? primaryCategory.posts : [] }) %>
     </div>
-    <div class="col-md-4">
-
+    <div class="col-md-4 secondary-archive">
+      <h1>
+        <%- secondary %>
+      </h1>
+      <%- partial('_partial/side-list', { posts: secondaryCategory ? secondaryCategory.posts : [] }) %>
     </div>
   </div>
 </div>

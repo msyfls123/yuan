@@ -127,12 +127,18 @@ h4 {
 /* Index styles */
 
 .row-corporate
-  size: 100% 600px
-  background: url(../assets/img/bg-banner.png) no-repeat right top / 60% auto
+  position: relative
+  margin: 0 -15px
+  size: calc(100% + 30px) 600px
   overflow: hidden
-  @media (max-width: 1024px)
-    background-size: 100%
-    background-blend-mode: saturation
+  .bg-index-banner
+    position: absolute
+    size: 100%
+    background: url(../assets/img/bg-banner.png) no-repeat right top / 60% auto
+    @media mobile_query
+      opacity: .3
+      background-size: 100%
+      background-blend-mode: saturation
 
 
 .flush-with-header {
@@ -204,6 +210,9 @@ h4 {
   @media mobile_query
     size: 100px 30px
     padding: 10px 0 15px
+
+.reduce-header .header-navigation > ul > li > a
+  padding-top: 22px
 
 .header
   margin-bottom: 0
@@ -280,10 +289,25 @@ h4 {
       text-decoration: none
 
 .main-archive
+.secondary-archive
   h1
     font-size: 24px
     line-height: 1
     margin: 64px 0 72px
+    color: rgba(#0a0a0a, .85)
+
+.secondary-archive
+  padding-left: 30px
+  background: #f8f8f8
+  background-clip: content-box
+  h1
+    padding-left: 48px
+  @media mobile_query 
+    padding: 20px 30px
+    margin: 0 -15px
+    background-clip: border-box
+    h1
+      padding-left: 0
 
 .card-list
   display: flex
@@ -291,14 +315,17 @@ h4 {
   justify-content: space-between
   align-items: flex-start
   padding: 0
-  margin: 0
+  margin: -10px -10px 0
   list-style: none
   a
-  a:hover
+    display: block
     text-decoration: none
+    padding: 10px
+    &:hover
+      background: #f8f8f8
   > li
     flex: none
-    width: calc(50% - 20px)
+    width: calc(50% - 10px)
     margin-bottom: 96px
     @media mobile_query
       width: 100%
@@ -312,9 +339,110 @@ h4 {
       margin-top: 32px
       font-size: 18px
       line-height: 1
+      min-height: @font-size
       color: rgba(#000, .85)
+      ellipsis()
     h3
       margin-top: 24px
       font-size: 28px
       line-height: 1
       color: rgba(#000, .85)
+      ellipsis()
+
+.side-list
+  margin-left: 48px
+  padding: 0
+  @media mobile_query
+    margin-left: 0
+  li
+    list-style: none
+    padding: 30px 0
+    pixel-border(#ddd, before, top)
+    &:last-child
+      pixel-border(#ddd, after, bottom)
+    transition: all .3s ease-in-out
+    &:hover
+      transform: translateX(-15px)
+  a
+    text-decoration: none
+    
+  header
+    span
+    em
+    time
+      margin-right: 12px
+      font-size: 14px
+      font-style: normal
+      line-height: 1
+      color: rgba(#0a0a0a, .45)
+    em
+      color: rgba(#0a0a0a, .65)
+    h3
+      margin: 16px 0
+      font-size: 24px
+      line-height: 33px
+      color: #0a0a0a
+
+.archive-main
+  display: flex
+
+.showcase-list
+  padding: 0
+  li
+    list-style: none
+    padding: 30px 0
+    pixel-border(#ddd, before, top)
+    &:last-child
+      pixel-border(#ddd, after, bottom)
+    &:hover
+      background: #f8f8f8
+  a
+    text-decoration: none
+    display: flex
+    @media mobile_query
+      flex-flow: column
+  .cover
+    flex: none
+    width: 400px
+    margin-right: 64px
+    max-height: 230px
+    background: no-repeat center / cover
+    @media mobile_query
+      size: 100% 150px
+      margin-right: 0
+  .info
+    flex: 1
+    @media mobile_query
+      padding: 15px
+    span
+    em
+    time
+      margin-right: 12px
+      font-size: 14px
+      font-style: normal
+      line-height: 1
+      color: rgba(#0a0a0a, .45)
+    em
+      color: rgba(#0a0a0a, .65)
+    h3
+      margin: 16px 0
+      font-size: 24px
+      line-height: 33px
+      color: #0a0a0a
+    .abstract
+      margin: 22px 0 56px
+      clamp(3)
+      font-size: 16px
+      line-height: 22px
+      height: 66px
+      color: rgba($black, .45)
+      @media mobile_query
+        height: auto
+        margin: 22px 0
+  .fa-long-arrow-right
+    flex: none
+    margin: 20px
+    font-size: 28px
+    @media mobile_query
+      align-self: flex-end
+      margin: -36px 0 0

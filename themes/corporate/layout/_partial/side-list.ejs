@@ -1,0 +1,18 @@
+<ul class="side-list">
+  <% posts.forEach(function(post, i){ %>
+  <li>
+    <a class="slide" href="<%- url_for(post.path) %>">
+      <header>
+        <p>
+          <% post.tags.forEach((tag, index) => { %>
+            <span><%- tag.name %></span>
+          <% }) %>
+          <em><%- post.subtitle %></em>
+        </p>
+        <h3><%- post.title %></h3>
+        <time>最后编辑于：<%- post.updated.format('YYYY.MM.DD') %></time>
+      </header>
+    </a>
+  </li>
+  <% }) %>
+</ul>

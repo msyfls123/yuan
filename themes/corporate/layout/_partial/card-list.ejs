@@ -1,5 +1,5 @@
 <ul class="card-list">
-  <% posts.forEach(function(post, i){ %>
+  <% posts.sort('weight', 'desc').forEach(function(post, i){ %>
   <li>
     <a class="card" href="<%- url_for(post.path) %>">
       <% var backgroundImage = url_for(post.thumbnail || '/img/cat.jpg') %>

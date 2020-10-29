@@ -1,12 +1,28 @@
-<div class="container">
-  <ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="<%= url_for(theme.menu ? theme.menu['设计'] : '/archives/') %>">设计</a></li>
-    <li class="active">Post</li>
-  </ul>
-  <section id="main">
-    <%- partial('_partial/post/title', {class_name: 'article-title', post: page,
-    index: false}) %>
-    <%- partial('_partial/article', {post: page, index: false}) %>
-  </section>
-</div>
+<article class="article-main" itemscope itemprop="blogPost">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header>
+          <% if (page.subtitle) { %>
+            <p><%= page.subtitle %></p>
+          <% } %>
+          <h1><%= page.title %></h1>
+        </header>
+      </div>
+    </div>
+  </div>
+  <% if (page.thumbnail) { %>
+    <div class="banner" style="background-image: url('<%= url_for(page.thumbnail) %>')">
+    </div>
+  <% } %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          <%- page.content %>
+        </div>
+        <%- partial('_partial/post/nav', { post: page }) %>
+      </div>
+    </div>
+  </div>
+</article>

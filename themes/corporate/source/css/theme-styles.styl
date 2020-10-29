@@ -342,6 +342,8 @@ h4 {
       min-height: @font-size
       color: rgba(#000, .85)
       ellipsis()
+      @media mobile_query
+        min-height: 0
     h3
       margin-top: 24px
       font-size: 28px
@@ -448,3 +450,86 @@ h4 {
     @media mobile_query
       align-self: flex-end
       margin: -36px 0 0
+
+.article-main
+  margin-bottom: 50px
+  overflow-x: hidden
+  
+  header
+    margin: 126px 0 96px
+    p
+      margin-bottom: 56px
+      font-size: 32px
+      color: rgba($black, .65)
+    h1
+      font-size: 42px
+      color: $black
+  .banner
+    size: 100vw 30vw
+    position: relative
+    background: #000 no-repeat center / contain
+    &::before
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      size: 40% 100%
+      background: linear-gradient(to right, #000 40%, rgba(#000, .3) 75%, rgba(#000, 0) 100%)
+    &::after
+      right: 0
+      left: unset
+      background: linear-gradient(to left, #000 40%, rgba(#000, .3) 75%, rgba(#000, 0) 100%)
+    @media mobile_query
+      size: 100% 40vw
+      &::before
+        background: linear-gradient(to right, #000 20%, rgba(#000, 0) 100%)
+      &::after
+        background: linear-gradient(to left, #000 20%, rgba(#000, 0) 100%)
+  .content
+    margin: 30px 0 50px
+    font-size: 20px
+    line-height: 2
+    img
+    video
+      max-width: 100%
+  @media mobile_query
+    header
+    .content
+      padding-left: 15px
+      padding-right: 15px
+    header
+      margin: 40px 0 30px
+      p
+        margin-bottom: 25px
+        font-size: 18px
+      h1
+        font-size: 28px
+    .content
+      font-size: 16px
+
+.article-nav
+  display: flex
+  justify-content: space-between
+  font-size: 20px
+  .nav-link
+    color: rgba($black, .45)
+    text-decoration: none
+    display: flex
+    align-items: center
+    &:hover
+      color: rgba($black, .75)
+  .nav-title
+    ellipsis()
+  .fa
+    margin: 0 7px
+  @media mobile_query
+    .nav-title
+      font-size: 0
+      &.left::before
+        content: '前一篇'
+        font-size: 20px
+      &.right::before
+        content: '后一篇'
+        font-size: 20px

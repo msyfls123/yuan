@@ -1,5 +1,5 @@
 <ul class="side-list">
-  <% posts.forEach(function(post, i){ %>
+  <% posts.sort('weight', 'desc').forEach(function(post, i){ %>
   <li>
     <a class="slide" href="<%- url_for(post.path) %>">
       <header>

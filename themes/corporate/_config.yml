@@ -10,7 +10,7 @@ rss: /atom.xml
 
 # Content
 excerpt_link: Read More
-fancybox: true # whether or not to load the fancybox library
+fancybox: false # whether or not to load the fancybox library
 
 # Integrations
 disqus_shortname: 

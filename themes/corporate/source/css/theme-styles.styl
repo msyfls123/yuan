@@ -132,14 +132,13 @@ h4 {
   size: calc(100% + 30px) 600px
   overflow: hidden
   .bg-index-banner
+    pixel-border: #ddd before bottom
     position: absolute
     size: 100%
-    background: url(../assets/img/bg-banner.png) no-repeat right top / 60% auto
+    background: #F8F8F8 url(../assets/img/bg-banner.png) no-repeat right top / 60% auto
     @media mobile_query
       opacity: .3
       background-size: 100%
-      background-blend-mode: saturation
-
 
 .flush-with-header {
   margin-top: -23px; 
@@ -392,6 +391,7 @@ h4 {
 
 .showcase-list
   padding: 0
+  margin-bottom: 60px
   li
     list-style: none
     padding: 30px 0
@@ -533,3 +533,58 @@ h4 {
       &.right::before
         content: '后一篇'
         font-size: 20px
+
+.showcase-section
+  margin-top: 96px
+  h2
+    margin: 0 0 40px
+    font-size: 32px
+    color: rgba($black, .85)
+  .intro
+    margin: -15px 0 96px
+    font-size: 39px
+    color: rgba($black, 0.85)
+    line-height: 1.7
+    @media mobile_query
+      font-size: 24px
+  .banner-list
+    list-style: none
+    padding: 0
+    .primary-banner
+      margin-bottom: 96px
+      position: relative
+      display: block
+      size: 100% 686px
+      background: no-repeat center / cover
+      &::before
+        content: ''
+        display: block
+        size: 100%
+        top: 0
+        left: 0
+        background: rgba(#000, .2)
+        transition: all .3s ease
+      &:hover::before
+        background: rgba(#000, .4)
+      @media mobile_query
+        size: 100% 60vh
+    header
+      position: absolute
+      left: 40px
+      bottom: 40px
+      line-height: 1
+      color: #f0f0f0
+      p
+        font-size: 30px
+        margin-bottom: 15px
+      h3
+        font-size: 35px
+
+.btn-success
+  padding: 6px 23px
+  background: $green
+  &:hover
+    background: darken($green, 20%)
+
+.index-main
+  margin-bottom: 40px

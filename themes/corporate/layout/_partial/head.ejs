@@ -10,7 +10,7 @@
     var title = page.title;
 
     if (is_archive()){
-      title = 'Archives';
+      title = '设计';
 
     if (is_month()){
         title += ': ' + page.year + '/' + page.month;
@@ -18,9 +18,9 @@
         title += ': ' + page.year;
       }
     } else if (is_category()){
-      title = 'Category: ' + page.category;
+      title = page.category;
     } else if (is_tag()){
-      title = 'Tag: ' + page.tag;
+      title = page.tag;
     }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>

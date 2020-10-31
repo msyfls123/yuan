@@ -8,7 +8,7 @@
           banner = post.path + banner
         }
       %> 
-      <div class="thumbnail" style="background-image: url('<%= url_for(banner) %>')"></div>
+      <div class="banner" style="background-image: url('<%= url_for(banner) %>')"></div>
       <header>
         <p><%- post.subtitle || '' %></p>
         <h3 title="<%= post.title %>"><%- post.title %></h3>

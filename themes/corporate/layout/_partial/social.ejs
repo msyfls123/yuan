@@ -1,7 +1,15 @@
 <!-- BEGIN SOCIAL -->
 <ul class="social-footer list-unstyled list-inline">
   <% for(var s in theme.social) { %>
-    <li><a href="<%- url_for(theme.social[s]) %>"><i class="fa fa-<%= s %>"></i></a></li>
+    <li class="social-item">
+        <% var url = url_for('/assets/img/qrcode-' + s + '.jpg') %>
+        <a href="<%- url_for(theme.social[s] || url) %>">
+          <i class="icon-<%= s %>"></i>
+          <% if (!theme.social[s]) { %>
+            <img src="<%- url %>" class="social-qrcode"/>
+          <% } %>
+        </a>
+    </li>
   <% } %>
 </ul>  
 <!-- END SOCIAL -->

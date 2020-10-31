@@ -273,7 +273,26 @@ h4 {
 .pre-footer
   background: #0c1623;
 
+.pre-footer
+  .pre-footer-col
+    h2
+      responsive-font: 28px
+      margin-bottom: 25px
+      @media mobile_query
+        white-space: normal
+    p
+    address
+      responsive-font: 14px 16px
+      color: rgba(#fff, .85)
+      @media mobile_query
+        color: rgba(#fff, .65)
+    + .pre-footer-col
+      padding-top: 75px
+      @media mobile_query
+        padding-top: 0
+
 .social-footer
+  margin-top: 40px
   > li
     a
       font-size: 1.5em
@@ -351,11 +370,14 @@ h4 {
     @media mobile_query
       width: 100%
       margin-bottom: 70px
-  .thumbnail
+  .banner
     size: 100% 0
     padding-bottom: $coverHeightRatio
     background: no-repeat center / cover
   header
+    @media mobile_query
+      padding: 0
+      margin: 0
     p
       margin-top: 32px
       font-size: 18px
@@ -373,10 +395,10 @@ h4 {
       ellipsis()
 
 .side-list
-  margin-left: 48px
+  margin: 0 20px 0 48px
   padding: 0
   @media mobile_query
-    margin-left: 0
+    margin: 0
   li
     list-style: none
     padding: 30px 0
@@ -390,11 +412,14 @@ h4 {
     text-decoration: none
     
   header
+    @media mobile_query
+      padding: 0
+      margin: 0
     span
     em
     time
       margin-right: 12px
-      font-size: 14px
+      responsive-font: 14px 16px
       font-style: normal
       line-height: 1
       color: rgba(#0a0a0a, .45)
@@ -649,3 +674,29 @@ h4 {
     margin: 30px 0 0 -8px
     size: 145px
     background: no-repeat center / cover
+
+$icons = wechat linkedin maimai
+.social-item
+  display: inline-block
+  position: relative
+  for icon in $icons
+    .icon-{icon}
+      display: block
+      size: 24px
+      background: s('url(../assets/img/icon-%s.png)', icon) no-repeat center / contain
+      @media mobile_query
+        size: 36px
+  .social-qrcode
+    position: absolute
+    opacity: 0
+    transform: translateY(30%)
+    bottom: 35px
+    left: 5px
+    size: 200px
+    border: 10px solid #fff
+    box-shadow: 0 0 10px 5px rgba(#000, .3)
+    transition: all .3s ease-in-out
+    :hover&
+      opacity: 1
+      transform: translateY(0)
+  

@@ -5,20 +5,22 @@
 		.find(cat => cat.name === config.main_categories[1])
 	var primaryPosts = primary.posts
 		.filter(page => !!page.thumbnail)
+		.sort('date', 'desc').sort('weight', 'desc')
 		.slice(0, 3)
 	var secondaryPosts = secondary.posts
 		.filter(page => !!page.thumbnail)
+		.sort('date', 'desc').sort('weight', 'desc')
 		.slice(0, 3)
 %>
 <div class="container-fluid flush-with-header">
 	<div class="margin-bottom-40 row-corporate">
 		<div class="bg-index-banner"></div>
 		<div class="container">
-			<div class="col-xs-8 col-sm-12 row-corporate-text-container">
+			<div class="col-xs-12 row-corporate-text-container">
 				<div class="row-corporate-text">
 					<h4>数字化体验创新生长力</h4>
-					<h1>数字设计 体验咨询</h1>
-					<h1>创新与成长 & 合作探究</h1>
+					<h1>数字设计 体验咨询<br>
+					创新与成长 & 合作探究</h1>
 					<p>
 						除了企业项目，也喜欢喜欢探究人与物，文化、商业模式和经济形势，<br>
 						引入多元视角思考，运用独有的逻辑和方法去解析诠释。
@@ -53,7 +55,7 @@
 						</li>
 					<% }) %>
 				</ul>
-				<a href="<%- url_for(primary.path) %>" class="btn btn-success">
+				<a href="<%- url_for('/archives/') %>" class="btn btn-success">
 					更多 <i class="fa fa-arrow-right"></i>
 				</a>
 			</div>

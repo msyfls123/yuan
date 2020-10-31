@@ -73,3 +73,8 @@ pixel-border(color, pseudo, direction)
       transform-origin: left top
       transform: scale(.5)
       border: 1px solid color
+
+responsive-font(pcSize, mobileSize = pcSize)
+  font-size: pcSize
+  @media (max-width: 767px)
+    font-size: mobileSize

@@ -70,7 +70,7 @@ index_generator:
     date: -1
 
 category_generator:
-  per_page: 10
+  per_page: 0
   order_by:
     weight: -1
     date: -1

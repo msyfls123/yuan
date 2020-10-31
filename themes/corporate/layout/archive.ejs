@@ -4,7 +4,7 @@
   var primaryCategory = site.categories.data.find(cat => cat.name === primary)
   var secondaryCategory = site.categories.data.find(cat => cat.name === secondary)
 %>
-<%- partial('_partial/tabs', { current: '' }) %>
+<%- partial('_partial/tabs', { current: primary }) %>
 <div class="container">
   <div id="main" class="archive-main">
     <%# partial('_partial/archive', {pagination: config.archive, index: false}) %>
@@ -12,13 +12,13 @@
       <h1>
         <%- primary %>
       </h1>
-      <%- partial('_partial/card-list', { posts: primaryCategory ? primaryCategory.posts : [] }) %>
+      <%- partial('_partial/card-list', { posts: primaryCategory ? primaryCategory.posts.sort('date', 'desc').sort('weight', 'desc') : [] }) %>
     </div>
     <div class="col-md-4 secondary-archive">
       <h1>
         <%- secondary %>
       </h1>
-      <%- partial('_partial/side-list', { posts: secondaryCategory ? secondaryCategory.posts : [] }) %>
+      <%- partial('_partial/side-list', { posts: secondaryCategory ? secondaryCategory.posts.sort('date', 'desc').sort('weight', 'desc') : [] }) %>
     </div>
   </div>
 </div>

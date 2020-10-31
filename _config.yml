@@ -115,8 +115,12 @@ theme: corporate
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
+deploy: 
+  type: cos
+  # secretId:
+  # secretKey:
+  # bucket:
+  # region:
 
 exclude_generators:
   - index

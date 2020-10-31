@@ -341,8 +341,9 @@ h4 {
     display: block
     text-decoration: none
     padding: 10px
+    border: thin solid transparent
     &:hover
-      background: #f8f8f8
+      border: thin solid #ddd
   > li
     flex: none
     width: calc(50% - 10px)
@@ -596,18 +597,24 @@ h4 {
       &:hover::before
         background: rgba(#000, .4)
       @media mobile_query
-        size: 100% 60vh
+        size: 100% 0
+        padding-bottom: 60%
     header
       position: absolute
       left: 40px
       bottom: 40px
       line-height: 1
       color: #f0f0f0
+      @media mobile_query
+        margin: 0
+        left: 20px
+        right: 20px
+        bottom: 20px
       p
-        font-size: 30px
+        responsive-font: 30px 18px
         margin-bottom: 15px
       h3
-        font-size: 35px
+        responsive-font: 35px 28px
 
 .btn-success
   padding: 6px 23px

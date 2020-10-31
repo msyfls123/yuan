@@ -2,8 +2,13 @@
   <% posts.forEach(function(post, i){ %>
   <li>
     <a class="slide" href="<%- url_for(post.path) %>">
-      <% var backgroundImage = url_for(post.thumbnail || '/img/cat.jpg') %>
-      <div class="cover" style="background-image: url('<%= backgroundImage %>')"></div>
+      <%
+        var banner = post.thumbnail
+        if (!/^\\/.test(banner)) {
+          banner = post.path + banner
+        }
+      %> 
+      <div class="cover" style="background-image: url('<%= url_for(banner) %>')"></div>
       <div class="info">
         <% if (post.tags.length || post.subtitle) { %>
           <p>

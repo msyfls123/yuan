@@ -42,10 +42,16 @@
 				<ul class="banner-list">
 					<% primaryPosts.forEach((post) => { %>
 						<li>
+							<%
+								var banner = post.thumbnail
+								if (!/^\\/.test(banner)) {
+									banner = post.path + banner
+								}
+							%> 
 							<a
 								href="<%- url_for(post.path) %>"
 								class="primary-banner"
-								style="background-image: url('<%- url_for(post.thumbnail) %>');"
+								style="background-image: url('<%- url_for(banner) %>');"
 							>
 								<header>
 									<p><%- post.subtitle %></p>
@@ -74,10 +80,16 @@
 				<ul class="banner-list">
 					<% secondaryPosts.slice(0, 1).forEach((post) => { %>
 						<li>
+							<%
+								var banner = post.thumbnail
+								if (!/^\\/.test(banner)) {
+									banner = post.path + banner
+								}
+							%> 
 							<a
 								href="<%- url_for(post.path) %>"
 								class="primary-banner"
-								style="background-image: url('<%- url_for(post.thumbnail) %>');"
+								style="background-image: url('<%- url_for(banner) %>');"
 							>
 								<header>
 									<p><%- post.subtitle %></p>

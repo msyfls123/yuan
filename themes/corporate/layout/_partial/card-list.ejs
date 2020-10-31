@@ -2,8 +2,13 @@
   <% posts.forEach(function(post, i){ %>
   <li>
     <a class="card" href="<%- url_for(post.path) %>">
-      <% var backgroundImage = url_for(post.thumbnail || '/img/cat.jpg') %>
-      <div class="thumbnail" style="background-image: url('<%= backgroundImage %>')"></div>
+      <%
+        var banner = post.thumbnail
+        if (!/^\\/.test(banner)) {
+          banner = post.path + banner
+        }
+      %> 
+      <div class="thumbnail" style="background-image: url('<%= url_for(banner) %>')"></div>
       <header>
         <p><%- post.subtitle || '' %></p>
         <h3 title="<%= post.title %>"><%- post.title %></h3>

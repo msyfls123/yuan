@@ -513,9 +513,14 @@ h4 {
     margin: 30px 0 50px
     font-size: 20px
     line-height: 2
+    p
+      line-height: 2
+    h1, h2, h3, h4, h5
+      margin: 2em 0 1em
     img
     video
       max-width: 100%
+      margin-bottom: 30px
   @media mobile_query
     header
     .content
@@ -576,15 +581,17 @@ h4 {
       margin-bottom: 96px
       position: relative
       display: block
-      size: 100% 686px
+      size: 100% 0
+      padding-bottom: $coverHeightRatio
       background: no-repeat center / cover
       &::before
         content: ''
         display: block
+        position: absolute
         size: 100%
         top: 0
         left: 0
-        background: rgba(#000, .2)
+        background: rgba(#000, .15)
         transition: all .3s ease
       &:hover::before
         background: rgba(#000, .4)
@@ -609,4 +616,29 @@ h4 {
     background: darken($green, 20%)
 
 .index-main
-  margin-bottom: 40px
+  margin-bottom: 80px
+
+.contact-main
+  margin: 72px 0 104px
+  .landscape
+    margin: 0 42px 50px 0
+    size: calc(100% - 42px) 0
+    padding-bottom: (100 * 502 / 763)%
+    background: no-repeat center / cover
+    @media mobile_query
+      width: 100%
+      margin-right: 0
+  h1
+    responsive-font: 88px 50px
+    text-indent: -10px
+    margin-bottom: 70px
+    @media mobile_query
+      text-indent: 0
+      text-align: center
+  address
+    font-size: 16px
+    line-height: 2.5
+  .qrcode
+    margin: 30px 0 0 -8px
+    size: 145px
+    background: no-repeat center / cover

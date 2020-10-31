@@ -1,11 +1,15 @@
 ---
 title: {{ title }}
-subtitle:
-category: 企业项目
+subtitle: 副标题
+category:
+  - [企业项目]
+  - [设计研究]
 tags:
   - 标签一
   - 标签二
-thumbnail: img/cat.jpg
+  - 不需要可删除
+lede: 简介，随便写点啥吧，也可以不写
+thumbnail: images/placeholder.jpg
 weight: 1
 date: {{ date }}
 ---

@@ -13,7 +13,13 @@
   </div>
   <div class="container">
   <% if (page.thumbnail) { %>
-    <div class="banner" style="background-image: url('<%= url_for(page.thumbnail) %>')">
+    <%
+      var banner = page.thumbnail
+      if (!/^\\/.test(banner)) {
+        banner = page.path + banner
+      }
+    %> 
+    <div class="banner" style="background-image: url('<%= url_for(banner) %>')">
     </div>
   <% } %>
   </div>

@@ -4,9 +4,13 @@
 
 # Site
 title: Yuan Design
-subtitle: ''
-description: ''
-keywords: 设计 创新
+subtitle: '为了更精彩的生活'
+description: '数字化体验创新生长力'
+keywords:
+- 数字设计
+- 体验咨询
+- 创新与成长
+- 合作探究
 author: Yuan
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -42,7 +46,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # 每个页面一个资源文件夹
 relative_link: false
 future: true
 highlight:
